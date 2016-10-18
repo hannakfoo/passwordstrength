@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength demo</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.0/zxcvbn.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">&nbsp;</div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <h3>Password strenght</h3>
+        <input id="password" class="mdl-textfield__input" type="password"/><br>
+        <button type="submit" onclick="calculateStrength()"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Wachtwoord opslaan
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">&nbsp;
+        <p>
+            score:
+        </p></div>
+</div>
+<script>
+
+    function calculateStrength() {
+        console.log('test');
+        var userInputs = [];
+        var result = zxcvbn($('#password').val(), userInputs);
+
+        console.log(result.score);
+    }
+
+
+</script>
+</body>
+</html>
