@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.0/zxcvbn.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-
 </head>
 <body>
 <div class="mdl-grid">
@@ -24,9 +23,10 @@
         </button>
     </div>
     <div class="mdl-cell mdl-cell--4-col">&nbsp;
-        <p>
-            score:
-        </p></div>
+        <p id="score">
+
+        </p>
+    </div>
 </div>
 <script>
 
@@ -35,7 +35,8 @@
         var userInputs = [];
         var result = zxcvbn($('#password').val(), userInputs);
 
-        console.log(result.score);
+        $('#score').html(JSON.stringify(result));
+        console.log( JSON.stringify(result));
     }
 
 
