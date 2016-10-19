@@ -16,30 +16,16 @@
 <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--4-col">&nbsp;</div>
     <div class="mdl-cell mdl-cell--4-col">
-        <h3>Password strenght</h3>
+        <h3>zxcvbn password strenght</h3>
         <input id="password" class="mdl-textfield__input" type="password"/><br>
-        <button type="submit" onclick="calculateStrength()"
-                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Wachtwoord opslaan
+        <button type="submit" onclick="calculateStrength()" onkeyup="calculateStrength()"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Strength score
         </button>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">&nbsp;
-        <p id="score">
-
-        </p>
+        <div class="row">
+            <p id="score"></p>
+        </div>
     </div>
 </div>
-<script>
-
-    function calculateStrength() {
-        console.log('test');
-        var userInputs = [];
-        var result = zxcvbn($('#password').val(), userInputs);
-
-        $('#score').html(JSON.stringify(result));
-        console.log( JSON.stringify(result));
-    }
-
-
-</script>
+<script src="calculate.js"></script>
 </body>
 </html>
